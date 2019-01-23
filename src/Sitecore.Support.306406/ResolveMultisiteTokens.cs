@@ -24,7 +24,7 @@
       query = ReplaceTokenWithItemPath(query, "$tenant", () => MultisiteContext.GetTenantItem(contextItem), escapeSpaces);
       query = ReplaceTokenWithItemPath(query, "$siteMedia", () => MultisiteContext.GetSiteMediaItem(contextItem), escapeSpaces);
       query = ReplaceTokenWithItemPath(query, "$site", () => MultisiteContext.GetSiteItem(contextItem), escapeSpaces);
-      query = ExpandTokenWithDynamicItemPaths(query, "$sharedSites", () => SharedSitesContext.GetSharedSitesWithoutCurrent(contextItem), escapeSpaces);
+      query = ExpandTokenWithDynamicItemPaths(query, "$sharedSites", () => SharedSitesContext.GetSharedSites(contextItem), escapeSpaces);
       query = ReplaceTokenWithItemPath(query, "$home", () => ServiceLocator.ServiceProvider.GetService<ISiteInfoResolver>().GetStartPath(contextItem), escapeSpaces);
       query = (args.Query = ReplaceTokenWithValue(query, "$templates", () => GetTenantTemplatesQuery(contextItem)));
     }
