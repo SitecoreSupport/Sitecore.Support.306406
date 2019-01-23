@@ -13,6 +13,9 @@
 
   public class ResolveMultisiteTokens : Sitecore.XA.Foundation.Multisite.Pipelines.ResolveTokens.ResolveMultisiteTokens
   {
+    public ResolveMultisiteTokens() : base() { }
+
+    public ResolveMultisiteTokens(IMultisiteContext multisiteContext, ISharedSitesContext shredSIteContext) : base(multisiteContext, shredSIteContext) { }
     public override void Process(ResolveTokensArgs args)
     {
       string query = args.Query;
